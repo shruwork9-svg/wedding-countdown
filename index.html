@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wedding Countdown</title>
+
+<style>
+body {
+text-align:center;
+font-family: Georgia, serif;
+background:#f4ede4;
+padding-top:120px;
+}
+
+h1{
+color:#7a4e2d;
+}
+
+#countdown{
+font-size:32px;
+margin-top:20px;
+color:#7a4e2d;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Groom & Bride</h1>
+<p>Wedding Countdown</p>
+
+<div id="countdown"></div>
+
+<script>
+
+var eventDate = new Date("June 9, 2030 04:00:00").getTime();
+
+setInterval(function() {
+
+var now = new Date().getTime();
+var distance = eventDate - now;
+
+var days = Math.floor(distance/(1000*60*60*24));
+var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds";
+
+},1000);
+
+</script>
+
+</body>
+</html>
